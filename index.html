@@ -567,7 +567,7 @@
       .mission-description {
         font-size: 18px;
         line-height: 1.8;
-        color: #555;
+        color: #212529;
         margin: 0;
       }
 
@@ -596,8 +596,22 @@
         }
 
         .mission-card {
-          max-width: 85%;
+          left: 50%;
+          transform: translateX(-50%);
+          max-width: 90%;
+          width: 90%;
           padding: 20px 25px;
+          bottom: 5%;
+        }
+
+        @keyframes floatCard {
+          0%,
+          100% {
+            transform: translateX(-50%) translateY(0);
+          }
+          50% {
+            transform: translateX(-50%) translateY(-10px);
+          }
         }
       }
 
@@ -614,11 +628,20 @@
           font-size: 14px;
         }
 
+        .mission-img {
+          height: 400px;
+        }
+
         .mission-card {
+          position: static;
+          transform: none;
           flex-direction: column;
           gap: 15px;
           padding: 20px;
-          bottom: -50px;
+          width: 100%;
+          max-width: 100%;
+          margin-top: 20px;
+          animation: none;
         }
 
         .mission-card-icon {
@@ -636,7 +659,7 @@
         }
 
         .mission-content {
-          margin-top: 100px;
+          margin-top: 40px;
         }
       }
 
@@ -663,7 +686,7 @@
       .focus-subtitle {
         font-size: 18px;
         line-height: 1.8;
-        color: #555;
+        color: #212529;
         margin: 0;
         text-align: left;
       }
@@ -946,7 +969,7 @@
       .adoption-subtitle {
         font-size: 18px;
         line-height: 1.8;
-        color: #555;
+        color: #212529;
         margin-bottom: 40px;
       }
 
@@ -1208,8 +1231,8 @@
       }
 
       .footer-logo-circle {
-        width: 80px;
-        height: 80px;
+        width: 65px;
+        height: 65px;
         background-color: white;
         border-radius: 50%;
         display: flex;
@@ -1241,7 +1264,6 @@
         text-align: center;
         width: 100%;
         padding-top: 20px;
-        border-top: 1px solid rgba(255, 255, 255, 0.2);
       }
 
       .footer-copyright p {
@@ -1485,23 +1507,9 @@
           <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
             <div class="focus-card">
               <div class="focus-card-icon">
-                <svg
-                  width="60"
-                  height="60"
-                  viewBox="0 0 60 60"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <circle cx="30" cy="15" r="5" fill="#5cb3ff" />
-                  <circle cx="15" cy="45" r="5" fill="#5cb3ff" />
-                  <circle cx="45" cy="45" r="5" fill="#5cb3ff" />
-                  <path
-                    d="M27 18 L18 42 M33 18 L42 42 M18 45 L42 45"
-                    stroke="#5cb3ff"
-                    stroke-width="2.5"
-                    stroke-linecap="round"
-                  />
-                </svg>
+                <img
+                  src="./assets/svg/icon-park-outline_circular-connection.svg"
+                />
               </div>
               <h3 class="focus-card-title">Technology Interoperability</h3>
               <p class="focus-card-description">
@@ -1516,42 +1524,7 @@
           <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
             <div class="focus-card">
               <div class="focus-card-icon">
-                <svg
-                  width="60"
-                  height="60"
-                  viewBox="0 0 60 60"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <rect
-                    x="15"
-                    y="12"
-                    width="30"
-                    height="36"
-                    rx="2"
-                    stroke="#5cb3ff"
-                    stroke-width="2.5"
-                    fill="none"
-                  />
-                  <rect
-                    x="20"
-                    y="20"
-                    width="20"
-                    height="3"
-                    rx="1.5"
-                    fill="#5cb3ff"
-                  />
-                  <rect
-                    x="20"
-                    y="28"
-                    width="20"
-                    height="3"
-                    rx="1.5"
-                    fill="#5cb3ff"
-                  />
-                  <circle cx="25" cy="38" r="3" fill="#5cb3ff" />
-                  <circle cx="35" cy="38" r="3" fill="#5cb3ff" />
-                </svg>
+                <img src="./assets/svg/icon-park-outline_toolkit.svg" />
               </div>
               <h3 class="focus-card-title">Developer Experience</h3>
               <p class="focus-card-description">
@@ -1580,7 +1553,7 @@
             <div class="global-card">
               <div class="global-card-image">
                 <img
-                  src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?w=800&h=500&fit=crop"
+                  src="./assets/images/85a59bb17498020c9a219e6766de802840c04e5c.jpg"
                   alt="Global Map"
                   class="global-img"
                 />
@@ -1601,7 +1574,7 @@
             <div class="global-card">
               <div class="global-card-image">
                 <img
-                  src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=500&fit=crop"
+                  src="./assets/images/e55a759401a8b2a0f5656976e4ae1bb3705a9266.jpg"
                   alt="Data Center"
                   class="global-img"
                 />
@@ -1685,27 +1658,10 @@
             <div class="footer-logo-wrapper">
               <div class="footer-logo-circle">
                 <!-- UN Logo SVG -->
-                <svg viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg">
-                  <circle
-                    cx="25"
-                    cy="25"
-                    r="20"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                  />
-                  <circle cx="25" cy="25" r="3" fill="currentColor" />
-                  <path
-                    d="M25 10 L25 20 M25 30 L25 40 M10 25 L20 25 M30 25 L40 25"
-                    stroke="currentColor"
-                    stroke-width="2"
-                  />
-                  <path
-                    d="M15 15 L20 20 M30 20 L35 15 M15 35 L20 30 M30 30 L35 35"
-                    stroke="currentColor"
-                    stroke-width="2"
-                  />
-                </svg>
+                <img
+                  src="./assets/logo/1fdf73be7d6b3d59596f6c3d3834f957e2d63d10.png"
+                  style="width: 100%"
+                />
               </div>
               <div class="footer-text">
                 <h3>
