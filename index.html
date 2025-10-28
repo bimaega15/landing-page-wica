@@ -20,7 +20,11 @@
     </script>
     <script>
       // Apply version to CSS files
-      document.write('<link rel="stylesheet" href="./assets/css/styles.css?v=' + VERSION + '" />');
+      document.write(
+        '<link rel="stylesheet" href="./assets/css/styles.css?v=' +
+          VERSION +
+          '" />'
+      );
     </script>
   </head>
   <body>
@@ -47,11 +51,17 @@
           <nav>
             <button class="mobile-menu-toggle" id="menuToggle">☰</button>
             <ul class="nav-menu" id="navMenu">
-              <li><a href="#home" class="active">Home</a></li>
-              <li><a href="#partnership">Public Private Partnership</a></li>
-              <li><a href="#faqs">FAQs</a></li>
-              <li><a href="#opportunities">Opportunities</a></li>
-              <li><a href="#contact" class="contact-btn">Contact Us</a></li>
+              <li><a href="./index.html" class="active">Home</a></li>
+              <li>
+                <a href="./public-private-partnership.html"
+                  >Public Private Partnership</a
+                >
+              </li>
+              <li><a href="./faqs.html">FAQs</a></li>
+              <li><a href="./opportunities.html">Opportunities</a></li>
+              <li>
+                <a href="./contact-us.html" class="contact-btn">Contact Us</a>
+              </li>
             </ul>
           </nav>
         </div>
@@ -377,7 +387,9 @@
 
     <!-- Custom JavaScript with jQuery (with versioning) -->
     <script>
-      document.write('<script src="./assets/js/main.js?v=' + VERSION + '"><\/script>');
+      document.write(
+        '<script src="./assets/js/main.js?v=' + VERSION + '"><\/script>'
+      );
     </script>
   </body>
 </html>
