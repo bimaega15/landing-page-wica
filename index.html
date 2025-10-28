@@ -78,9 +78,8 @@
       }
 
       .logo-text-line2 {
-        font-size: 11px;
-        font-weight: 400;
-        opacity: 0.95;
+        font-size: 13px;
+        font-weight: 600;
       }
 
       /* Navigation */
@@ -238,7 +237,7 @@
         align-items: center;
         position: relative;
         overflow: hidden;
-        padding: 80px 0;
+        padding: 0 0;
       }
 
       /* Decorative Background Circles */
@@ -320,36 +319,37 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        gap: 20px;
       }
 
       .image-wrapper {
-        position: absolute;
-        border-radius: 20px;
+        position: relative;
         overflow: hidden;
         box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
         transition: transform 0.3s ease;
+        flex: 1;
+        height: 450px;
       }
 
       .image-wrapper:hover {
-        transform: translateY(-10px);
+        transform: scale(1.1);
+        z-index: 10;
       }
 
       .image-1 {
-        width: 350px;
-        height: 450px;
-        right: 50px;
-        top: 0;
         z-index: 2;
-        border: 5px solid rgba(255, 255, 255, 0.3);
+        border-top-left-radius: 216.66px;
       }
 
       .image-2 {
-        width: 280px;
-        height: 350px;
-        left: 0;
-        bottom: 0;
         z-index: 1;
-        border: 5px solid rgba(255, 255, 255, 0.2);
+        border-top-left-radius: 216.66px;
+        transform: scaleX(-1);
+        height: 70%;
+      }
+
+      .image-2:hover {
+        transform: scaleX(-1) scale(1.1);
       }
 
       .hero-img {
@@ -382,11 +382,28 @@
         }
       }
 
+      /* Hero Spider Image */
+      .hero-spider {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100% !important;
+        height: auto;
+        z-index: 1;
+        opacity: 0.8;
+        pointer-events: none;
+      }
+
       /* Responsive Hero Section */
       @media (max-width: 991px) {
         .hero-section {
           min-height: auto;
           padding: 60px 0;
+        }
+
+        .hero-spider {
+          width: 120px;
         }
 
         .hero-content {
@@ -406,18 +423,11 @@
 
         .image-container {
           height: 400px;
+          gap: 15px;
         }
 
-        .image-1 {
-          width: 280px;
+        .image-wrapper {
           height: 350px;
-          right: 20px;
-        }
-
-        .image-2 {
-          width: 220px;
-          height: 280px;
-          left: 20px;
         }
       }
 
@@ -437,18 +447,13 @@
 
         .image-container {
           height: 350px;
+          flex-direction: column;
+          gap: 15px;
         }
 
-        .image-1 {
-          width: 200px;
-          height: 280px;
-          right: 10px;
-        }
-
-        .image-2 {
-          width: 160px;
-          height: 220px;
-          left: 10px;
+        .image-wrapper {
+          height: 200px;
+          width: 100%;
         }
 
         .circle-1 {
@@ -459,6 +464,10 @@
         .circle-2 {
           width: 300px;
           height: 300px;
+        }
+
+        .hero-spider {
+          width: 100px;
         }
       }
 
@@ -480,17 +489,18 @@
 
       .mission-img {
         width: 100%;
-        height: auto;
+        height: 600px;
         border-radius: 30px;
         box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
         display: block;
+        object-fit: cover;
       }
 
       /* Floating Card */
       .mission-card {
         position: absolute;
-        bottom: -30px;
-        left: 50%;
+        bottom: 7%;
+        left: 100%;
         transform: translateX(-50%);
         background: white;
         border-radius: 20px;
@@ -501,6 +511,7 @@
         align-items: flex-start;
         max-width: 90%;
         animation: floatCard 3s ease-in-out infinite;
+        width: 80%;
       }
 
       @keyframes floatCard {
@@ -654,6 +665,7 @@
         line-height: 1.8;
         color: #555;
         margin: 0;
+        text-align: left;
       }
 
       .focus-cards-row {
@@ -1309,27 +1321,10 @@
           <div class="logo-section">
             <div class="logo-circle">
               <!-- UN Logo SVG -->
-              <svg viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg">
-                <circle
-                  cx="25"
-                  cy="25"
-                  r="20"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                />
-                <circle cx="25" cy="25" r="3" fill="currentColor" />
-                <path
-                  d="M25 10 L25 20 M25 30 L25 40 M10 25 L20 25 M30 25 L40 25"
-                  stroke="currentColor"
-                  stroke-width="2"
-                />
-                <path
-                  d="M15 15 L20 20 M30 20 L35 15 M15 35 L20 30 M30 30 L35 35"
-                  stroke="currentColor"
-                  stroke-width="2"
-                />
-              </svg>
+              <img
+                src="./assets/logo/1fdf73be7d6b3d59596f6c3d3834f957e2d63d10.png"
+                height="50px"
+              />
             </div>
             <div class="logo-text">
               <div class="logo-text-line1">WORLD DIGITAL IDENTITY AND</div>
@@ -1378,14 +1373,15 @@
             <div class="image-container">
               <div class="image-wrapper image-1">
                 <img
-                  src="https://images.unsplash.com/photo-1554151228-14d9def656e4?w=500&h=600&fit=crop"
+                  src="./assets/images/37a9fbcebca64f4c9cb48f53f3cd3f82003311e9.jpg"
                   alt="Professional Woman"
                   class="hero-img"
                 />
               </div>
-              <div class="image-wrapper image-2">
+
+              <div class="image-wrapper image-2 mt-auto">
                 <img
-                  src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=500&fit=crop"
+                  src="./assets/images/5a21c605b6cf81ce49562e04685647cef76b9c85.jpg"
                   alt="Business Woman"
                   class="hero-img"
                 />
@@ -1396,8 +1392,11 @@
       </div>
 
       <!-- Decorative Background Elements -->
-      <div class="hero-bg-circle circle-1"></div>
-      <div class="hero-bg-circle circle-2"></div>
+      <!-- <div class="hero-bg-circle circle-1"></div>
+      <div class="hero-bg-circle circle-2"></div> -->
+
+      <!-- Spider Image -->
+      <img src="./assets/images/spider.png" alt="Spider" class="hero-spider" />
     </section>
 
     <!-- Core Mission Section -->
@@ -1408,7 +1407,7 @@
           <div class="col-lg-6 mission-image-col" data-aos="fade-right">
             <div class="mission-image-wrapper">
               <img
-                src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&h=1000&fit=crop"
+                src="./assets/images/18356d654ed3ce3f96c70d1ce24929e3e52ef0b1.jpg"
                 alt="Modern Building"
                 class="mission-img"
               />
