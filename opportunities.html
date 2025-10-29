@@ -51,7 +51,7 @@
           <nav>
             <button class="mobile-menu-toggle" id="menuToggle">☰</button>
             <ul class="nav-menu" id="navMenu">
-              <li><a href="./index.html" class="active">Home</a></li>
+              <li><a href="./index.html">Home</a></li>
               <li>
                 <a href="./public-private-partnership.html"
                   >Public Private Partnership</a
@@ -83,7 +83,14 @@
           development, and strategic partnerships.
         </p>
 
-        <div id="pdf-document"></div>
+        <div id="pdf-document" class="mt-4">
+          <iframe
+            src="./assets/pdf/1fdf73be7d6b3d59596f6c3d3834f957e2d63d10.pdf"
+            width="100%"
+            height="800px"
+            style="border: 1px solid #ddd; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+          </iframe>
+        </div>
       </div>
       <div class="mt-5 d-flex justify-content-center">
         <button
@@ -141,6 +148,16 @@
       document.write(
         '<script src="./assets/js/main.js?v=' + VERSION + '"><\/script>'
       );
+    </script>
+
+    <!-- Download Button Script -->
+    <script>
+      document.getElementById('downloadBtn').addEventListener('click', function() {
+        const link = document.createElement('a');
+        link.href = './assets/pdf/1fdf73be7d6b3d59596f6c3d3834f957e2d63d10.pdf';
+        link.download = 'WICA-Opportunities.pdf';
+        link.click();
+      });
     </script>
   </body>
 </html>

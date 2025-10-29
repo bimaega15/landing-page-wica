@@ -6,6 +6,33 @@ $(document).ready(function () {
     offset: 100,
   });
 
+  // Set active navigation based on current page
+  function setActiveNav() {
+    var currentPage = window.location.pathname.split("/").pop() || "index.html";
+
+    // Remove all active classes first
+    $("#navMenu a").removeClass("active");
+
+    // Add active class to matching navigation link
+    $("#navMenu a").each(function () {
+      var href = $(this).attr("href");
+
+      // Check if href matches current page
+      if (href === currentPage || href === "./" + currentPage) {
+        $(this).addClass("active");
+      }
+
+      // Handle root/home page
+      if ((currentPage === "" || currentPage === "index.html") &&
+          (href === "./index.html" || href === "index.html" || href === "./")) {
+        $(this).addClass("active");
+      }
+    });
+  }
+
+  // Call on page load
+  setActiveNav();
+
   // Mobile menu toggle
   $("#menuToggle").on("click", function () {
     $("#navMenu").toggleClass("active");
@@ -35,7 +62,14 @@ $(document).ready(function () {
 
     $("#navMenu a").each(function () {
       var currLink = $(this);
-      var refElement = $(currLink.attr("href"));
+      var href = currLink.attr("href");
+
+      // Skip external links and only process anchor links
+      if (!href || !href.startsWith("#")) {
+        return;
+      }
+
+      var refElement = $(href);
 
       if (
         refElement.length &&
